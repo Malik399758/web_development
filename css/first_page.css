@@ -1,0 +1,44 @@
+h4{
+    color: blue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    border: red dotted 1px;
+    display: inline;
+}
+h2{
+    color: brown;
+
+}
+span{
+    border: green solid 1px;
+    display: inline;
+}
+#span1{
+    color: green;
+}
+#span3{
+    color:red;
+}
+#span2{
+    color: brown;
+}
+.p{
+    color: blue;
+}
+p{
+    color: blue;
+}
+#p1{
+    color: red;
+}
+#p3{
+    color: palevioletred;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.umar{
+    color: crimson;
+    font-size: medium;
+}
+.same{
+    color: brown;
+}
