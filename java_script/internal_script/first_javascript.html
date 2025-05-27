@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        document.write('<h1>Hello world !!<\h1>');
+    </script>
+
+    <script>
+        var name =  prompt('Enter your name :','0')
+        document.write('Your name is ',name)
+        var password = prompt('Enter password here :','0')
+        document.write('Password :',password)
+    </script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #customPrompt {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      background: white;
+      padding: 20px;
+      border: 2px solid #06B6D4;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    #customPrompt p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<button onclick="showPrompt()">Enter Name</button>
+
+<div id="customPrompt">
+  <p>Enter your name:</p>
+  <input type="text" id="nameInput">
+  <button onclick="submitName()">Submit</button>
+</div>
+
+<p id="output"></p>
+
+<script>
+  function showPrompt() {
+    document.getElementById('customPrompt').style.display = 'block';
+  }
+
+  function submitName() {
+    var name = document.getElementById('nameInput').value;
+    document.getElementById('output').innerHTML = "<b>Name:</b> " + name;
+    document.getElementById('customPrompt').style.display = 'none';
+  }
+</script>
+
+</body>
+</html> -->
