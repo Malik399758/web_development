@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function changeName(){
+        var change = prompt('Enter change heading','0')
+        document.getElementById('h1').innerHTML = change
+        var name = prompt('Enter your name :','0')
+        document.getElementById('p1').innerHTML = name
+        }
+       
+
+    </script>
+    
+
+    <h1 id="h1">Hello This is dom javascript</h1>
+    <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Ratione voluptas vero laborum ipsum facilis cupiditate explicabo rem exercitationem, 
+         architecto deserunt, provident incidunt,
+         similique soluta ducimus repudiandae quaerat natus eligendi. In.</p>
+
+         <input type="button" value="click here" onclick="changeName()">
+</body>
+</html>
