@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function createBill()
+        {
+         var pre,curr,unt,bl
+         pre = parseFloat(document.getElementById('txtpre').value)
+         curr = parseFloat(document.getElementById('txtcurr').value)
+         unt = curr - pre
+         document.getElementById('unttxt').value = unt
+         document.getElementById('bltxt').value = unt * 42
+        }
+
+
+    </script>
+    <center>
+        <h3>Bill System</h3>
+
+        <form onsubmit="createBill();return false">
+            <input type="text" placeholder="Prevoius Reading" id="txtpre"><br><br>
+            <input type="text" placeholder="Current Reading" id="txtcurr"><br><br>
+            <input type="text" placeholder="Units" id="unttxt" readonly><br><br>
+            <input type="text" placeholder="bill" id="bltxt" readonly><br><br>
+            <input type="submit" value="Calculate bill">
+        </form>
+
+    </center>
+    
+</body>
+</html>
