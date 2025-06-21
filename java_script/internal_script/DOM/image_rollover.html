@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Roll Over</title>
+</head>
+<body  bgcolor="#6666ff">
+    <h3>Image Roll Over</h3>
+
+    <script>
+    function rollOver(img)
+    {
+        document.getElementById('image1').src = img
+    }
+
+    </script>
+
+    <img id ='image1' src="/assets1/images/main_profile.png" alt=""
+    onmousemove="rollOver('/assets1/images/video_user.jpg')"
+    onmouseout="rollOver('/assets1/images/main_profile.png')"
+    >
+    
+</body>
+</html>
