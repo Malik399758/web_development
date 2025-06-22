@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Preview</title>
+</head>
+<body>
+    <script>
+        function changeImage(img)
+        {
+            document.getElementById('pic').src = img
+        }
+    </script>
+    <h3 align = 'center'>Image Preview</h3>
+
+    <table border="0" width = '800' align="center" bgcolor = '#6666ff'>
+        <tr>
+            <td height = '400'>
+                <img id = 'pic'src="/assets1/images/butter_nan.jpg" alt="" height="400" width="770" border = '2'>
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td height = 100 border = '2'>
+
+
+                 <img src="/assets1/images/butter_nan.jpg" alt="" 
+                 height="100" width="150" onclick="changeImage('/assets1/images/butter_nan.jpg')">
+                <img src="/assets1/images/edit_profile_user.png" alt="" 
+                height="100" onclick="changeImage('/assets1/images/edit_profile_user.png')">
+                 <img src="/assets1/images/main_profile.png" alt="" 
+                 height="100" width="150" onclick="changeImage('/assets1/images/main_profile.png')">
+                  <img src="/assets1/images/video_user.jpg" alt="" 
+                  height="100" width="150" onclick="changeImage('/assets1/images/video_user.jpg')">
+                   <img src="/assets1/images/find_tutor.png" alt=""
+                    height="100" width="150" onclick="changeImage('/assets1/images/find_tutor.png')">
+
+            </td>
+
+        </tr>
+
+    </table>
+    
+</body>
+</html>
