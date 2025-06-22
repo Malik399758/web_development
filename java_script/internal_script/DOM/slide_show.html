@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show</title>
+</head>
+<body>
+    <script>
+        var pics = new Array(
+            '/assets1/images/butter_nan.jpg',
+            '/assets1/images/edit_profile_user.png',
+            '/assets1/images/find_tutor.png',
+            '/assets1/images/main_profile.png',
+            '/assets1/images/video_user.jpg',
+        )
+        var count = 0
+        var pcount = pics.length
+
+        // next image function
+
+        function nextImage()
+        {
+        count++
+        if(count<pcount)
+        {
+            document.pic.src = pics[count]
+        }
+        else
+        {
+        count = 0
+        document.pic.src = pics[count]
+        }
+        }
+
+
+        // prevoius image function
+        function previousImage()
+        {
+        count--;
+        if(count>-1)
+        {
+            document.pic.src = pics[count]
+        }
+        else
+        {
+            count = pcount-1
+            document.pic.src = pics[count]
+        }
+
+        }
+
+
+
+    </script>
+
+      <h3 align = 'center' style="color: white;">Slide Show</h3>
+
+      <table border="1" align="center" width = '500' bgcolor = 'black'>
+        <tr height = '250' >
+            <td>
+                <img name ='pic' src="/assets1/images/butter_nan.jpg" alt="" border = '2' width="500" height="400">
+            </td>
+        </tr>
+
+        <tr height = '50'>
+              <td align="center">
+                <input type="button" value="Back" onclick="previousImage()">
+                <input type="button" value="Next" onclick="nextImage()">
+              </td>
+        </tr>
+      </table>
+
+
+
+    
+</body>
+</html>
