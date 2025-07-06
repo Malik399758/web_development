@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <center>
+    <table border="1">
+      <tr>
+        <td valign="top" align="left">
+          <h3>Registration</h3>
+
+          <!-- Error messages appear here -->
+          <div id="errorMessages" class="errors"></div>
+
+          <form id="registrationForm" novalidate>
+            Username<br>
+            <input type="text" id="username">
+            <span class="note">(At least 8 characters)</span><br>
+
+            Password<br>
+            <input type="password" id="password">
+            <span class="note">(At least 8 characters)</span><br>
+
+            First Name <input type="text" id="firstName"><br>
+            Last Name&nbsp;<input type="text" id="lastName"><br>
+
+            Date of Birth<br>
+            <input type="text" id="dob" placeholder="DD/MM/YYYY">
+            <span class="note">(DD/MM/YYYY)</span><br>
+
+            Email&nbsp;<input type="email" id="email"><br>
+            Phone Number <input type="text" id="phone">
+            <span class="note">(optional XXXX-XXXXXXX)</span><br><br>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+          </form>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>

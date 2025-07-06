@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+      width: 300px;
+    }
+
+    #result {
+      height: 40px;
+      width: 100%;
+      font-size: 24px;
+      margin-bottom: 10px;
+      padding: 5px;
+      text-align: right;
+      border: 1px solid #ccc;
+    }
+
+    .btn {
+      width: 22%;
+      height: 50px;
+      margin: 15px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .btn-clear {
+      width: 100%;
+      background: #ff6666;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <input type="text" id="result" disabled>
+    <button class="btn btn-clear" onclick="clearResult()">Clear</button><br>
+    
+    <button class="btn" onclick="append('7')">7</button>
+    <button class="btn" onclick="append('8')">8</button>
+    <button class="btn" onclick="append('9')">9</button>
+    <button class="btn" onclick="append('/')">/</button>
+
+    <button class="btn" onclick="append('4')">4</button>
+    <button class="btn" onclick="append('5')">5</button>
+    <button class="btn" onclick="append('6')">6</button>
+    <button class="btn" onclick="append('')">x</button>
+
+    <button class="btn" onclick="append('1')">1</button>
+    <button class="btn" onclick="append('2')">2</button>
+    <button class="btn" onclick="append('3')">3</button>
+    <button class="btn" onclick="append('-')">-</button>
+
+    <button class="btn" onclick="append('0')">0</button>
+    <button class="btn" onclick="calculate()">=</button>
+    <button class="btn" onclick="append('+')">+</button>
+  </div>
+
+  <script>
+    let expression = "";
+
+    function isOperator(char) {
+      return ['+', '-', '*', '/'].includes(char);
+    }
+
+    function append(value) {
+      const lastChar = expression.charAt(expression.length - 1);
+
+      if (isOperator(value) && (expression === "" || isOperator(lastChar))) {
+        return; // avoid adding two consecutive operators
+      }
+
+      expression += value;
+      document.getElementById("result").value = expression;
+    }
+
+    function clearResult() {
+      expression = "";
+      document.getElementById("result").value = "";
+    }
+
+    function calculate() {
+      let tokens = [];
+      let num = "";
+
+      for (let i = 0; i < expression.length; i++) {
+        let ch = expression[i];
+        if (isOperator(ch)) {
+          tokens.push(parseInt(num));
+          tokens.push(ch);
+          num = "";
+        } else {
+          num += ch;
+        }
+      }
+
+      if (num !== "") {
+        tokens.push(parseInt(num));
+      }
+
+      // Handle *, /
+      for (let i = 0; i < tokens.length; i++) {
+        if (tokens[i] === '*' || tokens[i] === '/') {
+          let op = tokens[i];
+          let left = tokens[i - 1];
+          let right = tokens[i + 1];
+          let res = op === '*' ? left * right : Math.floor(left / right);
+          tokens.splice(i - 1, 3, res);
+          i -= 1;
+        }
+      }
+
+      // Handle +, -
+      let result = tokens[0];
+      for (let i = 1; i < tokens.length; i += 2) {
+        let op = tokens[i];
+        let next = tokens[i + 1];
+        if (op === '+') result += next;
+        else if (op === '-') result -= next;
+      }
+
+      document.getElementById("result").value = result;
+      expression = result.toString(); // To allow continuing with result
+    }
+  </script>
+</body>
+</html>
