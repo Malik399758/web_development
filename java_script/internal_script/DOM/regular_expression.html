@@ -12,10 +12,13 @@
 <body>
   <h3>Simpl Validation for name and password</h3>
   <form id="nameForm">
+    <input type="text" id="email" placeholder="Enter your email"><br>
+    <span id="emailError" class="error"></span><br>
     <input type="text" id="name" placeholder="Enter your name"><br>
     <span id="nameError" class="error"></span><br>
     <input type="text" id="password" placeholder="Enter your password"> <br> 
     <span id="passwordError" class="error"></span><br>
+    <span id="fieldError" class="error"></span><br><br>
     <input type="submit" value="Submit">
   </form>
 
@@ -23,24 +26,36 @@
     document.getElementById("nameForm").addEventListener("submit", function(e) {
       e.preventDefault();
 
+      // get value from text field and assign to these variables.
       var name = document.getElementById("name").value;
       var password = document.getElementById('password').value;
+      var email = document.getElementById('email').value;
+
+      // creating regular expression
       var nameRegex = /^[a-zA-Z]{2,20}$/;
       var passwordRegex = /^[0-9]{8}$/;
+      var emailRegex = /^[a-z0-9_]+@[a-z]{5,}\.[a-z]{3}$/
       let isValid = true;
 
       document.getElementById('nameError').textContent = '';
       document.getElementById('passwordError').textContent = '';
+      document.getElementById('emailError').textContent = '';
+      document.getElementById('fieldError').textContent = '';
 
-      if (!nameRegex.test(name)) {
+      if(name === '' || password === '' || email === ''){
+        document.getElementById('fieldError').textContent = 'please fill the form first.';
+        return;
+      }
+     if(!emailRegex.test(email)){
+        document.getElementById('emailError').textContent = 'please enter valid email';
+        isValid = false;
+      }else if (!nameRegex.test(name)) {
        document.getElementById('nameError').textContent = 'Please enter valid name';
        isValid = false;
       } else if(!passwordRegex.test(password)){
         document.getElementById('passwordError').textContent = 'Password should be at least 8 character';
         isValid = false;
-      }
-    
-      else {
+      }else {
         alert("Form submitted successfully!!");
       }
     });
