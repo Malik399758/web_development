@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple validation for name and password</title>
+</head>
+<style>
+    .error{
+        color: red;
+    }
+</style>
+<body>
+  <h3>Simpl Validation for name and password</h3>
+  <form id="nameForm">
+    <input type="text" id="name" placeholder="Enter your name"><br>
+    <span id="nameError" class="error"></span><br>
+    <input type="text" id="password" placeholder="Enter your password"> <br> 
+    <span id="passwordError" class="error"></span><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    document.getElementById("nameForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      var name = document.getElementById("name").value;
+      var password = document.getElementById('password').value;
+      var nameRegex = /^[a-zA-Z]{2,20}$/;
+      var passwordRegex = /^[0-9]{8}$/;
+      let isValid = true;
+
+      document.getElementById('nameError').textContent = '';
+      document.getElementById('passwordError').textContent = '';
+
+      if (!nameRegex.test(name)) {
+       document.getElementById('nameError').textContent = 'Please enter valid name';
+       isValid = false;
+      } else if(!passwordRegex.test(password)){
+        document.getElementById('passwordError').textContent = 'Password should be at least 8 character';
+        isValid = false;
+      }
+    
+      else {
+        alert("Form submitted successfully!!");
+      }
+    });
+  </script>
+</body>
+</html>
