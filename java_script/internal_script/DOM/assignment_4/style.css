@@ -1,4 +1,4 @@
-/* Layout identical to your original */
+
 table {
   border-collapse: collapse;
   width: 400px;
@@ -25,7 +25,6 @@ button {
   margin-right: 5px;
 }
 
-/* NEW: error‑message styling */
 .errors {
   color: red;
   margin-bottom: 10px;

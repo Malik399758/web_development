@@ -47,7 +47,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
       errors.push(`${dob} is not in DD/MM/YYYY format.`);
     } else {
       const day   = parseInt(match[1], 10);
-      const month = parseInt(match[2], 10) - 1; // JS months 0‑11
+      const month = parseInt(match[2], 10) - 1;
       const year  = parseInt(match[3], 10);
       const date  = new Date(year, month, day);
 
@@ -81,8 +81,8 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     // Show each error on a new line
     errorBox.innerHTML = errors.join('<br>');
   } else {
-    errorBox.innerHTML = '';  // Clear previous errors
-    alert('Registration successful!');  // Success message
-    this.reset();             // Optional: clear the form
+    errorBox.innerHTML = ''; 
+    alert('Registration successful!'); 
+    this.reset();             
   }
 });

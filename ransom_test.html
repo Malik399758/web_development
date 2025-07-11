@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ransomware Demo (Safe)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: red;
+      text-align: center;
+      padding: 100px;
+    }
+    #ransomware-message {
+      display: none;
+      background-color: #111;
+      border: 3px solid red;
+      padding: 30px;
+      font-size: 1.5em;
+    }
+    a {
+      color: lightblue;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Click the suspicious link below:</h1>
+  <a href="#" onclick="triggerFakeRansom()">Free Gift Card</a>
+
+  <div id="ransomware-message">
+    <h2>⚠️ Your files have been encrypted ⚠️</h2>
+    <p>All your important files are now locked.</p>
+    <p>Send $500 in Bitcoin to the following address:</p>
+    <p><strong>1FakeBitcoinAddr1234567890</strong></p>
+    <p>Or your data will be lost forever.</p>
+  </div>
+
+  <script>
+    function triggerFakeRansom() {
+      document.body.style.backgroundColor = "black";
+      document.querySelector("h1").style.display = "none";
+      document.querySelector("a").style.display = "none";
+      document.getElementById("ransomware-message").style.display = "block";
+      alert("Your system is now locked! Pay to unlock (simulation only)");
+    }
+  </script>
+
+</body>
+</html>
