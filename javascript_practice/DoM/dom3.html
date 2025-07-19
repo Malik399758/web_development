@@ -16,9 +16,14 @@
         {
             document.getElementById('div').style.color = 'red';
         }
+        function bold()
+        {
+           document.getElementById('bold').innerHTML = '<b>hello world</b>';
+        }
     </script>
     <div style="border: 2px solid blue; height: 30px;width: 20%;" id="div"></div><br><br>
     <button onclick="addText()">add text</button>
     <button onclick="colorChange()">color change</button>
+    <p id="bold" onclick="bold()">hello world</p>
 </body>
 </html>
