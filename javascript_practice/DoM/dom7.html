@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image rollover</title>
+</head>
+<body>
+    <script>
+        function changePic(imgscr)
+        {
+            document.getElementById('img').src = imgscr;
+        }
+    </script>
+
+    <img src="/assets1/images/butter_nan.jpg" alt="" id="img"
+    height="200"
+    onmousemove="changePic('/assets1/images/find_tutor.png')"
+    onmouseout="changePic('/assets1/images/butter_nan.jpg')"
+    >
+    
+</body>
+</html>
