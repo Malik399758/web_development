@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    
+    <script>
+        function addText()
+        {
+            document.getElementById('div').textContent = 'This is the div container';
+        }
+        function colorChange()
+        {
+            document.getElementById('div').style.color = 'red';
+        }
+    </script>
+    <div style="border: 2px solid blue; height: 30px;width: 20%;" id="div"></div><br><br>
+    <button onclick="addText()">add text</button>
+    <button onclick="colorChange()">color change</button>
+</body>
+</html>
