@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get and set attribute</title>
+</head>
+
+<body>
+
+    <h3>Get and set attribute in JavaScript</h3>
+    <script>
+        function get() {
+            var a = document.getElementById('get').getAttribute('title');
+            document.write(a);
+        }
+        function set()
+        {
+            var b = document.getElementById('set').setAttribute('src','/assets1/images/find_tutor.png')
+        }
+
+    </script>
+<!-- 
+    <img src="/assets1/images/butter_nan.jpg" title="image" id="get" onclick="get()" height="100"> -->
+    <img src="/assets1/images/butter_nan.jpg" title="image" id="set" onclick="set()" height="100">
+
+
+</body>
+
+</html>
