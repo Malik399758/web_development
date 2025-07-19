@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <script>
+        function show()
+        {
+            var a = document.getElementById('myh3').innerHTML;
+            document.write(a);
+        }
+        function display()
+        {
+           var b = document.getElementById('display');
+           document.write(b.innerHTML);
+        }
+        function changeText()
+        {
+           var c = document.getElementById('hello').innerHTML = 'Hello world';
+           document.write(c);
+        }
+    </script>
+
+    <button id="myh3" onclick="show()">show the inner text</button>
+    <button id="display" onclick="display()">Display the text</button>
+    <p id="hello" onclick="changeText()">Hello</p>
+    
+</body>
+</html>
