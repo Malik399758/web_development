@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Preview</title>
+</head>
+
+<body>
+
+    <script>
+        function changeImage(imgscr)
+        {
+            document.getElementById('img').src = imgscr;
+        }
+    </script>
+
+
+    <table border="2" width='300' height='200'>
+        <tr>
+            <td>
+                <img src="/assets1/images/video_user.jpg" alt="" height="150" width="250" id="img">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="/assets1/images/video_user.jpg" alt="" height="50" width="50" onclick="
+                    changeImage('/assets1/images/video_user.jpg')">
+                <img src="/assets1/images/butter_nan.jpg" alt="" height="50" width="50" 
+                onclick="changeImage('/assets1/images/butter_nan.jpg')">
+                <img src="/assets1/images/edit_profile_user.png" alt="" height="50" width="50"
+                onclick="changeImage('/assets1/images/edit_profile_user.png')">
+                <img src="/assets1/images/main_profile.png" alt="" height="50" width="50"
+                onclick="changeImage('/assets1/images/main_profile.png')">
+
+            </td>
+
+        </tr>
+    </table>
+
+</body>
+
+</html>
