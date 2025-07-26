@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>Image Preview</h3>
+    <script>
+        function change(img)
+        {
+            document.getElementById('main').src = img;
+        }
+
+    </script>
+
+    <img src="/assets1/images/butter_nan.jpg" alt="" height="400" id="main"><br>
+    <img src="/assets1/images/butter_nan.jpg" alt="" height="100"
+    onclick="change('/assets1/images/butter_nan.jpg')">
+    <img src="/assets1/images/edit_profile_user.png" alt="" height="100"
+    onclick="change('/assets1/images/edit_profile_user.png')">
+    <img src="/assets1/images/find_tutor.png" alt="" height="100"
+    onclick="change('/assets1/images/find_tutor.png')"
+    >
+
+
+
+
+</body>
+</html>

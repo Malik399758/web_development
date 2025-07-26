@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var pics = [
+            '/assets1/images/butter_nan.jpg',
+            '/assets1/images/video_user.jpg',
+            '/assets1/images/main_profile.png',
+        
+];
+
+  let count = 0; let pcount;
+  pcount = pics.length;
+
+  function npic()
+  {
+    count++;
+    if(count<pics.length)
+  {
+    document.getElementById("main").src = pics[count];
+  }else{
+    count = 0;
+    document.getElementById('main').src = pics[count];
+  }
+  }
+  function ppic()
+  {
+    count--;
+    if(count>-1){
+        document.getElementById('main').src = pics[count];
+    }else{
+        count = pcount-1;
+        document.getElementById('main').src = pics[count];
+    }
+  }
+
+    </script>
+
+    <img src="/assets1/images/butter_nan.jpg" alt="" id="main" height="100"><br><br>
+
+    <button onclick="ppic()">Previous</button>
+    <button onclick="npic()">Next</button>
+ 
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Rollover image</h3>
+
+    <script>
+        function move(img)
+        {
+         document.getElementById('aa').src = img;   
+        }
+    </script>
+
+
+    <img src="/assets1/images/butter_nan.jpg" alt="" height="100" id="aa"
+    onmousemove="move('/assets1/images/video_user.jpg')"
+    onmouseout="move('/assets1/images/butter_nan.jpg')">
+    
+
+
+    
+</body>
+</html>
